@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>MyTube</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      text-align: center;
+      margin: 40px;
+    }
+    h1 {
+      color: #cc0000;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 30px;
+    }
+    li {
+      margin: 10px 0;
+    }
+    a {
+      text-decoration: none;
+      color: #333;
+      background: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: inline-block;
+      transition: 0.2s;
+    }
+    a:hover {
+      background: #cc0000;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to MyTube</h1>
+
+  <?php
+    echo "<h2>My Works</h2>";
+
+    // Get current directory
+    $files = scandir(__DIR__);
+
+    echo "<ul>";
+    foreach ($files as $file) {
+      // Skip hidden files and this index itself
+      if ($file === '.' || $file === '..' || $file === basename(__FILE__) || $file === 'style.css') continue;
+
+      // Make clickable links for files and folders
+      if (is_dir($file)) {
+        echo "<li><a href='$file/'>$file (folder)</a></li>";
+      } else {
+        echo "<li><a href='$file'>$file</a></li>";
+      }
+    }
+    echo "</ul>";
+  ?>
+</body>
+</html>
