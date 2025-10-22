@@ -1,4 +1,4 @@
-#Maria Katrina O. Esclamado
+# Maria Katrina O. Esclamado
 BSCS - 3
 
 I've made several realizations in my use of Github--such are that Git and GitHub are essential tools for managing and collaborating on software projects. One on hand, Git helps track changes in
